@@ -18,49 +18,23 @@ import {
 import { FaHome, FaHistory } from "react-icons/fa";
 import { PiBowlSteam } from "react-icons/pi";
 import { TbToolsKitchen3 } from "react-icons/tb";
-import foods from "./foods.js";
-import drinks from "./drink.js";
-import { useContext, useState } from "react";
+import { useContext } from "react";
 import { ItemContext } from "../../contexts/ItemContext.jsx";
 
 export function Home() {
-  const { mesa, setMesa, client, setClient, setNewOrder } =
-    useContext(ItemContext);
-  const [categoryActive, setCategoryActive] = useState("comidas");
-  const [counts, setCounts] = useState(new Array(foods.length).fill(0));
-
-  function handleIncrement(index) {
-    const newList = [...counts];
-    newList[index] += 1;
-    setCounts(newList);
-  }
-
-  function handleDecrement(index) {
-    const newList = [...counts];
-    if (newList[index] > 0) newList[index] -= 1;
-    setCounts(newList);
-  }
-
-  function handleAddToOrder(item, index) {
-    if (client === "" || mesa === "") {
-      alert("Preencha o número da mesa e o nome do cliente");
-      return;
-    }
-    if (counts[index] > 0) {
-      const newItem = {
-        name: item.name,
-        quantity: counts[index],
-        type: categoryActive === "comidas" ? "comida" : "bebida",
-      };
-
-      setNewOrder((prev) => [...prev, newItem]);
-      alert("Item Adicionado com sucesso");
-    } else {
-      alert("Adicione um produto");
-    }
-  }
-
-  const filteredItems = categoryActive === "comidas" ? foods : drinks;
+  const {
+    mesa,
+    setMesa,
+    client,
+    setClient,
+    categoryActive,
+    setCategoryActive,
+    counts,
+    handleIncrement,
+    handleDecrement,
+    handleAddToOrder,
+    filteredItems,
+  } = useContext(ItemContext);
 
   return (
     <>
