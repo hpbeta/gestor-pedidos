@@ -35,10 +35,10 @@ export const Main = styled.main`
     font-size: 25px;
   }
 
-  @media(max-width: 480px) {
+  @media (max-width: 480px) {
     width: 350px;
     overflow-x: hidden;
-    }
+  }
 `;
 
 export const ContainerInput = styled.div`
@@ -48,10 +48,9 @@ export const ContainerInput = styled.div`
   margin: 30px 0 20px 0;
   border-bottom: 1px solid #e7e8ea;
 
-  @media(max-width: 480px) {
+  @media (max-width: 480px) {
     flex-direction: column;
-   
-    }
+  }
 `;
 
 export const InputInfo = styled.div`
@@ -66,9 +65,8 @@ export const InputInfo = styled.div`
     padding: 10px 10px;
     width: 400px;
     margin-bottom: 50px;
-    @media(max-width: 480px) {
-   width: 100%;
-   
+    @media (max-width: 480px) {
+      width: 100%;
     }
   }
 
@@ -77,8 +75,6 @@ export const InputInfo = styled.div`
     margin-bottom: 7px;
     font-weight: bold;
   }
-
- 
 `;
 
 export const Container = styled.div`
@@ -89,7 +85,7 @@ export const Container = styled.div`
   ul {
     display: flex;
     gap: 10px;
-    background-color:#f1f4f9;
+    background-color: #f1f4f9;
     width: 180px;
     padding: 10px;
     border-radius: 5px;
@@ -117,9 +113,9 @@ export const ContainerFoods = styled.div`
   width: 900px;
   gap: 30px;
   margin: 0 aut o;
-  @media(max-width: 480px) {
+  @media (max-width: 480px) {
     width: 450px;
-    }
+  }
 `;
 export const ContainerInfoFoods = styled.div`
   display: flex;
@@ -181,5 +177,3 @@ export const Signal = styled.p`
   color: #ffffff;
   cursor: pointer;
 `;
-
-

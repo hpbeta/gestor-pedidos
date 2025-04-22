@@ -1,6 +1,5 @@
 import { createGlobalStyle } from "styled-components";
 
-
 export const GlobalStyles = createGlobalStyle`
    * {
     margin: 0;
@@ -13,4 +12,4 @@ export const GlobalStyles = createGlobalStyle`
       list-style: none;
    }
     
-`
+`;

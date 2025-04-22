@@ -7,7 +7,6 @@ export function Header() {
       <ContainerHeader>
         <h1>Sistemas de Pedidos</h1>
       </ContainerHeader>
-      {/* <Home /> */}
     </>
   );
 }

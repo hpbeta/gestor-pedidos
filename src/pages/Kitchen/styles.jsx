@@ -18,9 +18,7 @@ export const ContainerFood = styled.div`
   gap: 20px;
   width: 1000px;
   margin: 0 auto;
-
-
-`
+`;
 
 export const ContainerOrder = styled.div`
   display: flex;
@@ -34,13 +32,13 @@ export const ContainerOrder = styled.div`
 `;
 
 export const Button = styled.button`
-    border: none;
-    padding: 10px;
-    border-radius: 5px;
-    width: 150px;
-    margin: 0 auto;
-    cursor: pointer;
-`
+  border: none;
+  padding: 10px;
+  border-radius: 5px;
+  width: 150px;
+  margin: 0 auto;
+  cursor: pointer;
+`;
 export const LinkStyled = styled(Link)`
   text-decoration: none;
   margin-top: 20px;
@@ -49,4 +47,4 @@ export const LinkStyled = styled(Link)`
   padding: 5px 30px;
   color: #000000;
   font-size: 12px;
-`
+`;

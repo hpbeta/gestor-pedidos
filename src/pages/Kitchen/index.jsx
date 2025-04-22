@@ -1,7 +1,12 @@
 import { useContext } from "react";
 import { ItemContext } from "../../contexts/ItemContext";
-import { Button, ContainerFood, ContainerOrder, LinkStyled, Main } from "./styles";
-
+import {
+  Button,
+  ContainerFood,
+  ContainerOrder,
+  LinkStyled,
+  Main,
+} from "./styles";
 
 export function Kitchen() {
   const { mesa, client, newOrder } = useContext(ItemContext);

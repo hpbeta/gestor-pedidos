@@ -24,7 +24,7 @@ import { useContext, useState } from "react";
 import { ItemContext } from "../../contexts/ItemContext.jsx";
 
 export function Home() {
-  const { mesa, setMesa, client, setClient, newOrder, setNewOrder } =
+  const { mesa, setMesa, client, setClient, setNewOrder } =
     useContext(ItemContext);
   const [categoryActive, setCategoryActive] = useState("comidas");
   const [counts, setCounts] = useState(new Array(foods.length).fill(0));
@@ -36,30 +36,28 @@ export function Home() {
   }
 
   function handleDecrement(index) {
-    const newItem = [...counts];
+    const newList = [...counts];
     if (newList[index] > 0) newList[index] -= 1;
     setCounts(newList);
   }
 
   function handleAddToOrder(item, index) {
-
-    if(client === "" || mesa === "") {
-      alert("Preencha o número da mesa e o nome do cliente")
-      return
+    if (client === "" || mesa === "") {
+      alert("Preencha o número da mesa e o nome do cliente");
+      return;
     }
     if (counts[index] > 0) {
       const newItem = {
         name: item.name,
         quantity: counts[index],
-        type: categoryActive === "comidas" ? "comida" : "bebida"
+        type: categoryActive === "comidas" ? "comida" : "bebida",
       };
 
-      setNewOrder((prev) => [ ...prev, newItem ]);
-      alert("Item Adicionado com sucesso")
+      setNewOrder((prev) => [...prev, newItem]);
+      alert("Item Adicionado com sucesso");
     } else {
-      alert  ("Adicione um produto")
+      alert("Adicione um produto");
     }
-    
   }
 
   const filteredItems = categoryActive === "comidas" ? foods : drinks;
@@ -94,7 +92,7 @@ export function Home() {
               type="text"
               placeholder="Número da mesa"
               value={mesa}
-              onChange={(e) => setMesa(e.target.value)} 
+              onChange={(e) => setMesa(e.target.value)}
             />
           </InputInfo>
           <InputInfo>

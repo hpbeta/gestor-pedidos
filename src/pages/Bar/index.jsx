@@ -1,6 +1,12 @@
 import { useContext } from "react";
 import { ItemContext } from "../../contexts/ItemContext";
-import { Button, ContainerOrder, Main, ContainerFood, LinkStyled } from "./styles";
+import {
+  Button,
+  ContainerOrder,
+  Main,
+  ContainerFood,
+  LinkStyled,
+} from "./styles";
 
 export function Bar() {
   const { mesa, client, newOrder } = useContext(ItemContext);
@@ -25,7 +31,7 @@ export function Bar() {
           : "Sem pedidos de bar"}
       </ContainerFood>
 
-            <LinkStyled to="/">Voltar</LinkStyled>
+      <LinkStyled to="/">Voltar</LinkStyled>
     </Main>
   );
 }
