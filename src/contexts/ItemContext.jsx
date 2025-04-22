@@ -8,7 +8,7 @@ export function ItemProvider({ children }) {
   const [mesa, setMesa] = useState("");
   const [client, setClient] = useState("");
   const [newOrder, setNewOrder] = useState([]);
-  const [ categoryActive, setCategoryActive ] = useState("comidas");
+  const [categoryActive, setCategoryActive] = useState("comidas");
   const [counts, setCounts] = useState(new Array(foods.length).fill(0));
 
   function handleIncrement(index) {
@@ -35,7 +35,7 @@ export function ItemProvider({ children }) {
         type: categoryActive === "comidas" ? "comida" : "bebida",
       };
 
-      setNewOrder((prev) => [...prev, newItem]);
+      setNewOrder((prev) => [...prev, newItem]);g
       alert("Item Adicionado com sucesso");
     } else {
       alert("Adicione um produto");
@@ -44,10 +44,24 @@ export function ItemProvider({ children }) {
 
   const filteredItems = categoryActive === "comidas" ? foods : drinks;
 
-
   return (
     <ItemContext.Provider
-      value={{ mesa, setMesa, client, setClient, newOrder, setNewOrder,categoryActive, setCategoryActive, counts, setCounts, handleIncrement, handleDecrement, handleAddToOrder, filteredItems }}
+      value={{
+        mesa,
+        setMesa,
+        client,
+        setClient,
+        newOrder,
+        setNewOrder,
+        categoryActive,
+        setCategoryActive,
+        counts,
+        setCounts,
+        handleIncrement,
+        handleDecrement,
+        handleAddToOrder,
+        filteredItems,
+      }}
     >
       {children}
     </ItemContext.Provider>
